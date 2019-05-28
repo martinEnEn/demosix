@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by Martin on 2019/3/23.
  */
-@RestController
+@RestController("index")
 @RequestMapping(value = "/")
 public class IndexController {
     private static Logger logger = LoggerFactory.getLogger(IndexController.class);
@@ -22,15 +22,13 @@ public class IndexController {
     @NoRepeat
     private String index(){
         logger.info("logMethod:"+Thread.currentThread().getStackTrace()[1].getMethodName()+"-------------start");
-        for (int i = 0; i <3 ; i++) {
-            System.out.println("==========index=========");
-        }
+
+        System.out.println("==========index=========");
         return "index";
     }
 
 
     @RequestMapping(value = "/001",method = RequestMethod.GET)
-//    @AutoMobileAnnotation
     private String i001(){
         System.out.println("==========i001============");
         return "/index";

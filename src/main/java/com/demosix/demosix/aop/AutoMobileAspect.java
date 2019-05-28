@@ -21,26 +21,39 @@ public class AutoMobileAspect {
 
 	public AutoMobileAspect() {
 	}
-	/**
-	 * 配置切入点为AutoMobileAnnotation注解
-	 */
-	@Pointcut(value = "@annotation(com.demosix.demosix.aop.NoRepeat)")
+
+	@Pointcut("@annotation(com.demosix.demosix.aop.NoRepeat)")
 	public void autoMobileAnnotation() {
-		for (int i = 0; i <6 ; i++) {
-			System.out.println("-----------autoMobileAnnotation---------------");
-		}
-		logger.info("AutoMobileAspect:autoMobileAnnotation() start");
+
 	}
 	/*
 	 * 通过连接点切入
 	 */
 	@Before("autoMobileAnnotation()")
-	public void twiceAsOld1(){
+	public void twi(){
 		for (int i = 0; i <6 ; i++) {
-			System.err.println ("before=============twiceAsOld1=====================" );
+			System.err.println ("before=============twi=====================" );
 		}
 	}
 
+	@Pointcut("execution(* com.demosix.demosix.controller.TestController.*(..))")
+	public void pointCut(){}
+
+	@Before(value = "pointCut()")
+	public void before(){
+        for (int i = 0; i <6 ; i++) {
+            System.err.println ("before=============twi=====================" );
+        }
+	}
+
+
+	@Pointcut("execution(* com.demosix.demosix.controller.*.*(..))")
+	public void pointCut1(){}
+
+	@Before(value = "pointCut1()")
+	public void before1(){
+		System.out.println("===============111111111============================>before");
+	}
 
 
 }
