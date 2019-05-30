@@ -47,7 +47,7 @@ public class AutoMobileAspect {
 	}
 
 
-	@Pointcut("execution(* com.demosix.demosix.controller.*.*(..))")
+	@Pointcut("execution(public * com.demosix.demosix.controller..*.*(..))")
 	public void pointCut1(){}
 
 	@Before(value = "pointCut1()")
