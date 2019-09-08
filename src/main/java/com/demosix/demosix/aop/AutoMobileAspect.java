@@ -36,24 +36,7 @@ public class AutoMobileAspect {
 		}
 	}
 
-//	@Pointcut("execution(* com.demosix.demosix.controller.TestController.*(..))")
-//	public void pointCut(){}
-//
-//	@Before(value = "pointCut()")
-//	public void before(){
-//        for (int i = 0; i <6 ; i++) {
-//            System.err.println ("before=============twi=====================" );
-//        }
-//	}
 
-
-//	@Pointcut("execution(public * com.demosix.demosix.controller..*.*(..))")
-//	public void pointCut1(){}
-//
-//	@Before(value = "pointCut1()")
-//	public void before1(){
-//		System.out.println("===============111111111============================>before");
-//	}
 
 
 }

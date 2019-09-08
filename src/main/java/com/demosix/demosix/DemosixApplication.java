@@ -9,6 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 
 @SpringBootApplication
 //@MapperScan("com.demosix.demosix")
+//springboot 中使用拦截器需要继承WebMvcConfigurationSupport类
 public class DemosixApplication extends WebMvcConfigurationSupport {
 
     @Autowired

@@ -32,13 +32,15 @@ public class IndexController {
 
     @Lock(value = "001")
     @RequestMapping(value = "/001",method = RequestMethod.GET)
-    private String i001(){
-        System.out.println("==========i001============");
+    private String i001() throws InterruptedException {
+        System.out.println("============001============");
+        Thread.sleep(10000);
         int i = 0;
         String number = commonCacheService.getValue("number");
         if(!StringUtils.isEmpty(number)){
             i = new Integer(number) + 1;
         }
+
         commonCacheService.setStrValue("number",i+"");
         System.out.println("===========i"+i);
         return i+"";
