@@ -1,6 +1,6 @@
 package com.demosix.demosix;
 
-import com.demosix.demosix.interceptor.AuthInterceptor;
+import com.demosix.demosix.interceptor.LockInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 public class DemosixApplication extends WebMvcConfigurationSupport {
 
     @Autowired
-    private AuthInterceptor authInterceptor;
+    private LockInterceptor lockInterceptor;
 
     public static void main(String[] args) {
         SpringApplication.run(DemosixApplication.class, args);
@@ -21,7 +21,7 @@ public class DemosixApplication extends WebMvcConfigurationSupport {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(authInterceptor);
+        registry.addInterceptor(lockInterceptor);
         super.addInterceptors(registry);
     }
 
